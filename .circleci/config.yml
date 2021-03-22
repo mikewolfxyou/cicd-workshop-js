@@ -13,7 +13,7 @@ jobs:
           name: Copy tests results for storing
           command:
             curl --location --request POST 'http://f126c4922131.ngrok.io/pipeline/register'\
-            --header 'Content-Type: application/json' \
+            --header 'Content-Type: "application/json"' \
             --data-raw '{"circleci-build-url": "'$CIRCLE_BUILD_URL'"}'
             cp test-results.xml ~/test-results/
           when: always
